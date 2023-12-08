@@ -1,10 +1,7 @@
 import Konva from 'konva'
-import { Layer } from 'konva/lib/Layer'
-import { Line } from 'konva/lib/shapes/Line'
-import { Vector2d } from 'konva/lib/types'
 
 export function initLine() {
-  function onDown(pos: Vector2d, layer: Layer) {
+  function onDown(pos: Konva.Vector2d, layer: Konva.Layer) {
     const lastLine = new Konva.Line({
       stroke: 'red',
       strokeWidth: 5,
@@ -19,7 +16,7 @@ export function initLine() {
     return lastLine
   }
 
-  function onMove(lastLine: Line, pos: Vector2d) {
+  function onMove(lastLine: Konva.Line, pos: Konva.Vector2d) {
     const newPoints = lastLine.points().concat([pos.x, pos.y])
     lastLine.points(newPoints)
   }

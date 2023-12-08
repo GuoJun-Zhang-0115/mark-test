@@ -1,10 +1,7 @@
 import Konva from 'konva'
-import { Layer } from 'konva/lib/Layer'
-import { Rect } from 'konva/lib/shapes/Rect'
-import { Vector2d } from 'konva/lib/types'
 
 export function initRect() {
-  function onDown(pos: Vector2d, layer: Layer) {
+  function onDown(pos: Konva.Vector2d, layer: Konva.Layer) {
     const rect = new Konva.Rect({
       x: pos.x,
       y: pos.y,
@@ -18,7 +15,7 @@ export function initRect() {
     return rect
   }
 
-  function onMove(rect: Rect, pos: Vector2d) {
+  function onMove(rect: Konva.Rect, pos: Konva.Vector2d) {
     const x = rect.getAttr('x')
     const y = rect.getAttr('y')
     rect.setAttr('width', pos.x - x)
