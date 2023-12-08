@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>konva test</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .menu {
+      height: 50px;
+      border-bottom: 1px solid black;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      column-gap: 15px;
+    }
+    .menu button {
+       padding: 3px 10px; 
+      }
+    .menu .active{
+      transform: scale(1.1);
+      background-color: turquoise;
+      border-radius: 3px;;
+    }
+    body {
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <div class="menu" id="menu">
+    <button id="select"> Select </button>
+    <button id="line"> Line </button>
+    <button id="rect"> Rect </button>
+    <button id="toJson"> To Json </button>
+  </div>
+  <div id="container"></canvas>
+</body>
+<script type="module" src="./src/index.ts"></script>
+</html>
